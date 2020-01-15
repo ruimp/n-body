@@ -7,7 +7,7 @@
 \usepackage{mathrsfs}
 \usepackage{booktabs}
 \usepackage{tikz}
-%\usepackage{hyperref}
+\usepackage{hyperref}
 
 %\usepackage[options]{hyperref}
 % To add links in your PDF file, use the package "hyperref"
@@ -102,9 +102,9 @@ Brute force approach equates to solving the system of ODE (equations
 
 for dimensionless quantities as defined in \cite{monteiro_sebenta_2019}
 (conversion factors listed in equations \ref{eq:r_mass} to \ref{eq:r_a}) and
-$\Lambda$ of the $k$-th component of the acceleration cause by the $i$-th particle on the $j$-th particle.
+$\Lambda$ is the $k$-th component of the acceleration exerted by the $i$-th particle on the $j$-th particle.
 
-Typical scales are defined to be the sum of masses and R the larges radius of
+Typical scales are defined to be the sum of masses and R the largest radius of
 the system.
 
 \begin{equation}
@@ -161,12 +161,12 @@ to go through each other.
 
 \subsection{Alternative approaches to N body simulations and scaling}
 
-For simulations of more particles one could employ more suited approaches for such
+For simulations of more particles one could employ better suited approaches for such
 endeavor.
 
-Firstly, one would run into scaling problem in the calculation $\Lambda$, due to
-memory limitations.\footnote{Note that $\text{dim} \Lambda = 3N^2$.}. Then now
-would do great to take advantage of a lower level language, and cycle over
+Firstly, one would run into scaling problem in the calculation of $\Lambda$, due to
+memory limitations.\footnote{Note that $\text{dim} \Lambda = 3N^2$.}. Now one
+would do well to take advantage of a lower level language, and cycle over
 particles, still employing vectorization but only doing calculations of
 dimension $3N$. These algorithms, along with the ones used in our work, scale
 with $\mathcal{O}(n^2)$.
@@ -191,10 +191,11 @@ can see the orbits are stable, as expected, in figure \ref{fig:sun_earth_mars}.
 
 In figure \ref{fig:sun_earth_mars_energy} one may see if our integration is
 adequately precise for sufficiently small integration step.\footnote{We see
-  that for a large integration energy is not conserved.}
+  that for a large integration step energy is not conserved.}
 
 The energy fluctuations happen as energy is exchanged between potential and
-kinetic energy, but no net loss is observed.
+kinetic energy, but no net loss is observed. This behavior is aggravated for
+systems where close encounters are common.
 
 \begin{figure}
   \centering
@@ -252,8 +253,8 @@ smaller than the first two, is so that it will maintain its position relative to
 the other bodies.
 
 Lagrange points are extremely useful in astronomy, as they allow astronomers to
-place observation and measurement instruments in stable positions in stable
-orbit, minimizing difficulties such as fuel cost and target exposure time.
+place observation and measurement instruments in stable relative
+position, minimizing difficulties such as fuel cost and target exposure time.
 
 \begin{figure}
   \centering
@@ -281,7 +282,7 @@ them are stable. Stable orbits are possible around $L_4$ and $L_5$ points, where
 the Coriolis effect acts as a restoring force. $L_1$, $L_2$ and $L_3$,
 however, do not allow for stable orbits. To verify these results we study
 Lagrange points $L_1$ and $L_5$ in a circular Sun-Earth like system for a
-satellite-like object (parameters in table \ref{}).
+satellite-like object (parameters in table \ref{tab:params}).
 
 \begin{table}
   \centering
@@ -445,16 +446,19 @@ amount of orbit compensation.
 \item An efficient, high level, understandable brute force gravitational N body
   code was developed for small systems.
 \item Algorithm was validated for the circular Sun-Earth-Mars and Sun-Earth-Moon systems.
-\item N body method was applied to the study of Lagrange points
+\item N body method was applied to the study of Lagrange points.
 \item Considerations were made about the stability of orbits around $L_1$ and
   $L_5$ points.
 \item Stability of $L_5$ orbits and instability of $L_1$ orbits were confirmed
   and simulated.
-\item Confirmed the need for numerical solution for the quintic equation for $L_1$ radius determination.
-\item Studied the influence of Jupiter on the $L_4$ and $L_5$ orbits.
-\item Discussed the importance of Lagrange points and practical orbits around
-  even unstable points are possible with minimal trajectory correction.
+\item The need for numerical solution for the quintic equation for $L_1$ radius
+  determination was confirmed.
+\item Influence of Jupiter on the $L_4$ and $L_5$ orbits was studied.
+\item The importance of Lagrange points and practical orbits around
+  even unstable points are possible with minimal trajectory correction was studied.
 \end{itemize}
+
+Full code may be found at \url{https://github.com/ruimpz/nbody}. Feedback is welcome.
 
 \begin{acknowledgements}
   This work was done under the orientation of professor Mário João Monteiro in the

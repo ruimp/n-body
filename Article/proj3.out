@@ -2,3 +2,15 @@
 \BOOKMARK [1][-]{section.2}{Computational Methods}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Code Philosophy}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Implementation}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Collisions}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Alternative approaches to N body simulations and scaling}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Code Validation}{}% 7
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Sun, Earth and Mars}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.0.2}{Sun, Earth and Moon}{subsubsection.3.0.1}% 9
+\BOOKMARK [1][-]{section.4}{Application: Stability of Lagrange Points}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Lagrange point L1}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Lagrange point L5}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Possible orbits around Lagrange points}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Oscillations around L1}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Influece of Jupiter on L5 stability}{subsection.4.3}% 15
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 16
