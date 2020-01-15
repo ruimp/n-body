@@ -6,6 +6,8 @@ import matplotlib.animation as animation
 _ = np.newaxis
 plt.style.use("seaborn-paper")
 
+# Intial conditions generator
+
 def init_cond(n, b = 0):
     # Initial condition array as (pos, vel)
     # Sun, earth and mars
@@ -140,9 +142,12 @@ def init_cond(n, b = 0):
         return r, np.array([m_sun, m_earth, m_orb, m_jupiter]), N
 
 
+# Numerical calculator for l1
+
 def get_l1(r, M1, M2, R):
     return M2/r**2 + M1/R**2 - r*(M1 + M2)/R**3 - M1/(R-r)**2
 
+# Initial condition transformation
 
 def cond_cm(r, m, N):
     x, v = r[:3*N], r[3*N:]
@@ -165,6 +170,8 @@ def normalize(r, m, N, G = 6.67408e-11):
     r[:3*N] /= X
     r[3*N:] /= V
     return r, m/M, norm_cond
+
+# Integrator funtion
 
 def g(t, r, m, N):
     x = r[:3*N]
